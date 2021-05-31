@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin centered{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+:root{
+  --pink: rgb(252, 70, 100);
+  --vanilla: rgb(255, 251, 245);
+  --blue : rgb(3, 144, 187);
+  --dblue: rgb(198, 241, 248);
+  --gray: rgb(43, 42, 42);
+}
+
+button{
+  cursor: pointer;
+  outline: none;
+}
+
+a{
+  text-decoration:none;
+  color: var(--pink);
+}
+
+.container{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height: 100vh;
+  background-color: var(--vanilla);
+}
+
+.overlay{
+  @include centered;
+  background-color:rgba(0, 0, 0, 0.507);
+  height:100vh;
+  width:100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+// Header
+
+.header{
+  @include centered;
+  width:100%;
+  height:5rem;
+  background-color: var(--dblue);
+}
+
+.header-button{
+  color: var(--pink);
+  background-color: transparent;
+  border: none;
+  margin:0 3rem;
+  font-size:20px;
+  position: relative;
+  text-decoration: none;
+}
+
+.header-button:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width:100%;
+  transform: scaleX(0) scaleY(1);
+  transition: transform 200ms;
+  background-color: var(--pink);
+  height:2px;
+}
+
+.header-button:hover:after{
+  transform: scaleX(1) scaleY(1);
+}
+
+
+// Home Page
+
+.home-page{
+  @include centered;
+  flex-direction: column;
+}
+
+.intro{
+  @include centered;
+  margin: 3rem 0;
+  div{
+    width:500px;
+  }
+}
+
+.intro-image{
+  width:400px;
+  height:400px;
+  object-fit: cover;
+}
+
+.intro-link{
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color:var(--dblue);
+  border-radius: 10px;
+  color: var(--pink);
+  transition: background-color 200ms;
+}
+
+.intro-link:hover{
+  background-color: var(--blue);
+  color: var(--vanilla);
+}
+
+.give-adoption{
+  width:1000px;
+  margin: 0 0 3rem 0;
+}
+
+section.process{
+  display:flex;
+  flex-direction:column;
+  align-items:center;  
+
+  line-height: 2.5;
+  letter-spacing: 1px;
+  margin: 3rem 0;
+}
+
+.process-images{
+  @include centered;
+  margin-bottom: 1rem;
+}
+
+.process-icon{
+  margin: 0 10px;
+}
+
+.process-image{
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+// Animals Page
+
+.animals-page{
+  @include centered;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  width:1000px;
+  margin: auto;
+  justify-content:space-evenly
+}
+
+
+// Individual Animal
+
+.individual-animal{
+  width:400px;
+  border: 1px solid rgb(201, 201, 201);
+  margin: 1.5rem 0;
+  display: flex;
+  transition: box-shadow 200ms;
+
+  img{
+    width:200px;
+    height:200px;
+    object-fit: cover;
+  }
+
+  div.image-container{
+    width:200px;
+    height:200px;
+  }
+
+  div.dog-info{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:100%;
+    padding: 10px;
+    p.breed-info{
+      text-transform: capitalize;
+    }
+
+    button.adopt-button{
+      width:100%;
+      border-radius: 5px;
+      background-color:var(--dblue);
+      transition: background-color 200ms;
+      border: none;
+      padding: 5px 10px;
+      font-size: 18px;
+    }
+    button.adopt-button:hover{
+      background-color:var(--blue);
+      color: white;
+    }
+
+    div.application-sent{
+      @include centered;
+      width: 100%;
+      border-radius:5px;
+      border: 1px solid var(--blue);
+      color: var(--blue);
+      padding: 5px 10px;
+      font-size: 18px;
+    }
+  }
+}
+
+.individual-animal:hover{
+  box-shadow: 0 0 5px 0 var(--blue);
+}
+
+// Application form 
+
+.application-form{
+  background-color:white;
+  width:600px;
+  padding: 2rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  div,p{
+    margin-bottom: 1rem;
+  }
+
+  div{
+    display:flex;
+    align-items: center;
+    p{
+      width:8rem;
+      margin-bottom: 0;
+    }
+    input{
+      outline:none;
+      border: none;
+      padding: 5px 10px;
+      border-bottom: 1px solid var(--blue);
+      transition: box-shadow 200ms;
+    }
+    input:focus{
+      box-shadow: 0 0 2px 0 var(--blue);
+    }
+  }
+
+  div.exp-input{
+    flex-direction: column;
+    align-items: start;
+    textarea{
+      outline:none;
+      padding: 5px 10px;
+      transition: box-shadow 200ms;
+      border:1px solid var(--dblue);
+      border-bottom: 1px solid var(--blue);
+      margin-top: 1rem;
+      width:100%;
+    }
+    textarea:focus{
+      box-shadow: 0 0 2px 0 var(--blue);
+    }
+  }
+
+  .submit-button{
+    padding: 5px 10px;
+    font-size:16px;
+    background-color: var(--dblue);
+    transition: background-color 200ms;
+    border-radius: 5px ;
+    border: none;
+  }
+
+  .submit-button:hover{
+    background-color: var(--blue);
+    color: white;
+  }
+
+  .close-button{
+    position: absolute;
+    top:1rem;
+    right: 1rem;
+    color: var(--pink);
+    cursor: pointer;
+  }
+}
+
+// About Page
+
+div.about-page{
+  width:1000px;
+  margin: auto;
+  display: flex;
+  div{
+    width:600;
+    padding: 1rem;
+    p{
+      margin-bottom: 1rem;
+      line-height: 2;
+    }
+  }
+}
+
+img.about-image{
+  width:400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+
+// Span
+
+span.r-bold-span{
+  color: var(--pink);
+  margin: 0 5px;
+}
+
+span.red-span{
+  color: var(--pink);
+}
+
+// Footer
+.footer{
+  @include centered;
+  width: 100%;
+  background-color:var(--gray);
+  color: white;
+  padding: 10px 20px;
+  font-size:16px;
+}
+
+// Animations 
+
+@keyframes pulse{
+  0%{ 
+    outline: 1px solid var(--pink);
+  }
+
+  100%{
+    outline: 15px solid transparent;
+  }
+}
+
+// Responsiveness man 
+@media (max-width: 1050px){
+
+  // Home page here
+  .intro{
+    div{
+      width:300px;
+    }
+  }
+  .intro-image{
+    width:300px;
+    height:300px;
+  }
+  .give-adoption{
+    width:95%;
+    text-align:justify;
+  }
+
+  // Dogs Page
+  .animals-page{
+    width:95%;
+  }
+
+  .individual-animal{
+  width:350px;
+
+  img{
+    width:200px;
+    height:200px;
+  }
+
+  div.image-container{
+    width:200px;
+    height:200px;
+  }
+
+  div.dog-info{
+      width:100%;
+      padding: 10px;
+    }
+  }
+
+  // About Page
+  div.about-page{ 
+  width:95%;
+  align-items:center;
+  div{
+    flex:1;
+    p{
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+  }
+  }
+  img.about-image{
+  width:300px;
+  height: 300px;
+  }
+
+}
+
+
+@media (max-width: 768px){
+
+  // Home page here
+  .intro{
+    width:95%;
+    flex-direction: column;
+    div{
+      width:95%;
+      text-align:justify;
+      order: 2;
+    }
+  }
+  .intro-image{
+    width:300px;
+    height:300px;
+  }
+  .give-adoption{
+    width:95%;
+    text-align:justify;
+  }
+  section.process{
+    width:95%;
+    div{
+      width:100%;
+      text-align:justify;
+      line-height:1.5;
+    }
+  }
+  div.process-images{
+    width:100%;
+    justify-content:space-around;
+  }
+  .process-image{
+    width:100px;
+    height: 100px;
+  }
+  svg.process-icon{
+    display:none;
+  }
+  .header-button{
+    margin:0 1rem;
+  }
+
+  // Dogs Page
+  .animals-page{
+    width:95%;
+  }
+  .individual-animal{
+  width:90%;
+  flex-direction: column;
+  img{
+    width:100%;
+  }
+  div.image-container{
+    width:100%;
+  }
+  }
+  // About Page
+  div.about-page{ 
+  width:95%;
+  flex-direction: column;
+  div{
+    flex:1;
+    padding:0;
+    p{
+      line-height: 1.4;
+      width:100%;
+      text-align: justify;
+    }
+  }
+  }
+  img.about-image{
+   margin-top: 1rem;
+  width:90%;
+  height: 300px;
+  }
+
+}

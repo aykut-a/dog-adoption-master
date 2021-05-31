@@ -1,0 +1,618 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --pink: rgb(252, 70, 100);
+  --vanilla: rgb(255, 251, 245);
+  --blue: rgb(3, 144, 187);
+  --dblue: rgb(198, 241, 248);
+  --gray: rgb(43, 42, 42);
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--pink);
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 100vh;
+  background-color: var(--vanilla);
+}
+
+.overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.507);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 5rem;
+  background-color: var(--dblue);
+}
+
+.header-button {
+  color: var(--pink);
+  background-color: transparent;
+  border: none;
+  margin: 0 3rem;
+  font-size: 20px;
+  position: relative;
+  text-decoration: none;
+}
+
+.header-button:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: scaleX(0) scaleY(1);
+          transform: scaleX(0) scaleY(1);
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+  background-color: var(--pink);
+  height: 2px;
+}
+
+.header-button:hover:after {
+  -webkit-transform: scaleX(1) scaleY(1);
+          transform: scaleX(1) scaleY(1);
+}
+
+.home-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 3rem 0;
+}
+
+.intro div {
+  width: 500px;
+}
+
+.intro-image {
+  width: 400px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.intro-link {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: var(--dblue);
+  border-radius: 10px;
+  color: var(--pink);
+  -webkit-transition: background-color 200ms;
+  transition: background-color 200ms;
+}
+
+.intro-link:hover {
+  background-color: var(--blue);
+  color: var(--vanilla);
+}
+
+.give-adoption {
+  width: 1000px;
+  margin: 0 0 3rem 0;
+}
+
+section.process {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 2.5;
+  letter-spacing: 1px;
+  margin: 3rem 0;
+}
+
+.process-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.process-icon {
+  margin: 0 10px;
+}
+
+.process-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.animals-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 1000px;
+  margin: auto;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.individual-animal {
+  width: 400px;
+  border: 1px solid #c9c9c9;
+  margin: 1.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-box-shadow 200ms;
+  transition: -webkit-box-shadow 200ms;
+  transition: box-shadow 200ms;
+  transition: box-shadow 200ms, -webkit-box-shadow 200ms;
+}
+
+.individual-animal img {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.individual-animal div.image-container {
+  width: 200px;
+  height: 200px;
+}
+
+.individual-animal div.dog-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  padding: 10px;
+}
+
+.individual-animal div.dog-info p.breed-info {
+  text-transform: capitalize;
+}
+
+.individual-animal div.dog-info button.adopt-button {
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--dblue);
+  -webkit-transition: background-color 200ms;
+  transition: background-color 200ms;
+  border: none;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.individual-animal div.dog-info button.adopt-button:hover {
+  background-color: var(--blue);
+  color: white;
+}
+
+.individual-animal div.dog-info div.application-sent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.individual-animal:hover {
+  -webkit-box-shadow: 0 0 5px 0 var(--blue);
+          box-shadow: 0 0 5px 0 var(--blue);
+}
+
+.application-form {
+  background-color: white;
+  width: 600px;
+  padding: 2rem 1rem 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.application-form div, .application-form p {
+  margin-bottom: 1rem;
+}
+
+.application-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.application-form div p {
+  width: 8rem;
+  margin-bottom: 0;
+}
+
+.application-form div input {
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--blue);
+  -webkit-transition: -webkit-box-shadow 200ms;
+  transition: -webkit-box-shadow 200ms;
+  transition: box-shadow 200ms;
+  transition: box-shadow 200ms, -webkit-box-shadow 200ms;
+}
+
+.application-form div input:focus {
+  -webkit-box-shadow: 0 0 2px 0 var(--blue);
+          box-shadow: 0 0 2px 0 var(--blue);
+}
+
+.application-form div.exp-input {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.application-form div.exp-input textarea {
+  outline: none;
+  padding: 5px 10px;
+  -webkit-transition: -webkit-box-shadow 200ms;
+  transition: -webkit-box-shadow 200ms;
+  transition: box-shadow 200ms;
+  transition: box-shadow 200ms, -webkit-box-shadow 200ms;
+  border: 1px solid var(--dblue);
+  border-bottom: 1px solid var(--blue);
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.application-form div.exp-input textarea:focus {
+  -webkit-box-shadow: 0 0 2px 0 var(--blue);
+          box-shadow: 0 0 2px 0 var(--blue);
+}
+
+.application-form .submit-button {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: var(--dblue);
+  -webkit-transition: background-color 200ms;
+  transition: background-color 200ms;
+  border-radius: 5px;
+  border: none;
+}
+
+.application-form .submit-button:hover {
+  background-color: var(--blue);
+  color: white;
+}
+
+.application-form .close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--pink);
+  cursor: pointer;
+}
+
+div.about-page {
+  width: 1000px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.about-page div {
+  width: 600;
+  padding: 1rem;
+}
+
+div.about-page div p {
+  margin-bottom: 1rem;
+  line-height: 2;
+}
+
+img.about-image {
+  width: 400px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+span.r-bold-span {
+  color: var(--pink);
+  margin: 0 5px;
+}
+
+span.red-span {
+  color: var(--pink);
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  background-color: var(--gray);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    outline: 1px solid var(--pink);
+  }
+  100% {
+    outline: 15px solid transparent;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    outline: 1px solid var(--pink);
+  }
+  100% {
+    outline: 15px solid transparent;
+  }
+}
+
+@media (max-width: 1050px) {
+  .intro div {
+    width: 300px;
+  }
+  .intro-image {
+    width: 300px;
+    height: 300px;
+  }
+  .give-adoption {
+    width: 95%;
+    text-align: justify;
+  }
+  .animals-page {
+    width: 95%;
+  }
+  .individual-animal {
+    width: 350px;
+  }
+  .individual-animal img {
+    width: 200px;
+    height: 200px;
+  }
+  .individual-animal div.image-container {
+    width: 200px;
+    height: 200px;
+  }
+  .individual-animal div.dog-info {
+    width: 100%;
+    padding: 10px;
+  }
+  div.about-page {
+    width: 95%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div.about-page div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  div.about-page div p {
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  img.about-image {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    width: 95%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .intro div {
+    width: 95%;
+    text-align: justify;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .intro-image {
+    width: 300px;
+    height: 300px;
+  }
+  .give-adoption {
+    width: 95%;
+    text-align: justify;
+  }
+  section.process {
+    width: 95%;
+  }
+  section.process div {
+    width: 100%;
+    text-align: justify;
+    line-height: 1.5;
+  }
+  div.process-images {
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .process-image {
+    width: 100px;
+    height: 100px;
+  }
+  svg.process-icon {
+    display: none;
+  }
+  .header-button {
+    margin: 0 1rem;
+  }
+  .animals-page {
+    width: 95%;
+  }
+  .individual-animal {
+    width: 90%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .individual-animal img {
+    width: 100%;
+  }
+  .individual-animal div.image-container {
+    width: 100%;
+  }
+  div.about-page {
+    width: 95%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  div.about-page div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0;
+  }
+  div.about-page div p {
+    line-height: 1.4;
+    width: 100%;
+    text-align: justify;
+  }
+  img.about-image {
+    margin-top: 1rem;
+    width: 90%;
+    height: 300px;
+  }
+}
+/*# sourceMappingURL=App.css.map */
